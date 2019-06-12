@@ -22,3 +22,17 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+now = datetime.now()
+
+year = now.year
+month = now.month
+
+user_date = input('Enter a month and a year: ').split(' ')
+
+if len(user_date) == 1 and not user_date == ['']:
+    print(calendar.month(year, int(user_date[0])))
+elif len(user_date) == 2:
+    print(calendar.month(int(user_date[1]), int(user_date[0])))
+else:
+    print(calendar.month(year, month))
